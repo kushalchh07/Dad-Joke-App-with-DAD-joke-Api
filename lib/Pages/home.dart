@@ -1,8 +1,8 @@
-
 // ignore_for_file: use_key_in_widget_constructors
 
 import 'package:dad_joke/Bloc/Joke_Bloc/joke_bloc.dart';
 import 'package:dad_joke/Bloc/Joke_Bloc/joke_state.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -26,7 +26,7 @@ class DadJokeScreen extends StatelessWidget {
                   if (state is DadJokeInitial) {
                     return Text("Press 'Generate' to get a dad joke!");
                   } else if (state is DadJokeLoading) {
-                    return CircularProgressIndicator();
+                    return CupertinoActivityIndicator();
                   } else if (state is DadJokeLoaded) {
                     return Text(
                       state.joke.joke,
